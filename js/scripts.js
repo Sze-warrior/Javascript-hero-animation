@@ -4,7 +4,7 @@ var heroTitle = document.querySelector('h2.hero-intro');
 var colorRandom = (Math.floor(Math.random() * 5) + 1);
 var heroBanner = document.querySelector('div.hero-banner');
 var cokeImg = document.querySelectorAll('img.coke-bottle');
-
+var text = document.querySelectorAll('div.primary');
 
 function heroAnimateIn(){
 	Velocity(cokeImg, {translateY:-450}, {duration:1, easing:"ease-in-out"});
@@ -12,6 +12,8 @@ function heroAnimateIn(){
 	
 	Velocity(heroTitle, {opacity:0}, {duration: 1});
 	Velocity(heroTitle, {opacity:1}, {duration:450, delay:400});
+}
+
 }
 
 if(colorRandom === 1){
@@ -36,4 +38,3 @@ else if(colorRandom === 5){
 	heroBanner.style.backgroundColor = "rgb(219, 57, 192)";
 }
 
-window.addEventListener("load", heroAnimateIn, false);
