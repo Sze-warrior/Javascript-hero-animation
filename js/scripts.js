@@ -9,11 +9,21 @@ var text = document.querySelectorAll('div.primary');
 function heroAnimateIn(){
 	Velocity(cokeImg, {translateY:-450}, {duration:1, easing:"ease-in-out"});
 	Velocity(cokeImg, {translateY:10}, {duration:500, easing:"ease-in-out"});
+	Velocity(cokeImg, {opacity:0.5}, {duration:450});
+	Velocity(cokeImg, {opacity:1}, {duration:450});
+
 	
 	Velocity(heroTitle, {opacity:0}, {duration: 1});
 	Velocity(heroTitle, {opacity:1}, {duration:450, delay:400});
 }
 
+function flipY(){
+	Velocity(text, {opacity:0}, {duration: 1});
+	Velocity(text, 'transition.flipYIn', {stagger:100, duration:500, delay:550, easing:"ease-in-out"});
+}
+
+function elements(){
+	console.log("working");
 }
 
 if(colorRandom === 1){
@@ -38,3 +48,5 @@ else if(colorRandom === 5){
 	heroBanner.style.backgroundColor = "rgb(219, 57, 192)";
 }
 
+window.addEventListener("load", heroAnimateIn, false);
+window.addEventListener("load", flipY, false);
