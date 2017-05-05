@@ -1,5 +1,5 @@
 //declaring variables to select DOM elements
-
+window.Velocity = window.Velocity || (window.jQuery || window.Zepto || window).Velocity;
 var heroTitle = document.querySelector('h2.hero-intro');
 var colorRandom = (Math.floor(Math.random() * 5) + 1);
 var heroBanner = document.querySelector('div.hero-banner');
